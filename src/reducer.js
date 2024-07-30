@@ -13,21 +13,21 @@ export default function reducer(state, action) {
         case "÷":
           return {
             ...state,
-            previous: state.current,
+            previous: state.previous || state.current,
             operation: "/",
             current: "",
           };
         case "×":
           return {
             ...state,
-            previous: state.current,
+            previous: state.previous || state.current,
             operation: "*",
             current: "",
           };
         default:
           return {
             ...state,
-            previous: state.current,
+            previous: state.previous || state.current,
             operation: action.payload.operation,
             current: "",
           };
@@ -36,7 +36,9 @@ export default function reducer(state, action) {
       switch (state.operation) {
         case "+":
           return {
-            previous: "",
+            previous: (
+              parseFloat(state.previous) + parseFloat(state.current)
+            ).toString(),
             operation: "",
             current: "",
             display: (
@@ -45,7 +47,9 @@ export default function reducer(state, action) {
           };
         case "-":
           return {
-            previous: "",
+            previous: (
+              parseFloat(state.previous) - parseFloat(state.current)
+            ).toString(),
             operation: "",
             current: "",
             display: (
@@ -54,7 +58,9 @@ export default function reducer(state, action) {
           };
         case "/":
           return {
-            previous: "",
+            previous: (
+              parseFloat(state.previous) / parseFloat(state.current)
+            ).toString(),
             operation: "",
             current: "",
             display: (
@@ -63,7 +69,9 @@ export default function reducer(state, action) {
           };
         case "*":
           return {
-            previous: "",
+            previous: (
+              parseFloat(state.previous) * parseFloat(state.current)
+            ).toString(),
             operation: "",
             current: "",
             display: (
