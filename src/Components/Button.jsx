@@ -14,6 +14,8 @@ export default function Button({ operation, label, dispatch }) {
       dispatch({ type: ACTIONS.ENTER, payload: { operation: operation } });
     } else if (label === "AC") {
       dispatch({ type: ACTIONS.CLEAR });
+    } else if (label === '+/-') {
+      dispatch({type: ACTIONS.NEGATE})
     }
   }
 

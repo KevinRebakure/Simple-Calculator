@@ -8,6 +8,12 @@ export default function reducer(state, action) {
         current: state.current + action.payload.digit,
         display: state.current + action.payload.digit,
       };
+    case ACTIONS.NEGATE:
+      return {
+        ...state,
+        current: (parseInt(state.current) * -1).toString(),
+        display: (parseInt(state.current) * -1).toString(),
+      };
     case ACTIONS.OPERATION:
       switch (action.payload.operation) {
         case "÷":

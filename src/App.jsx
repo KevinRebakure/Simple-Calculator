@@ -10,6 +10,7 @@ export const ACTIONS = {
   OPERATION: "OPERATION",
   ENTER: "ENTER",
   CLEAR: "CLEAR",
+  NEGATE: "NEGATE",
 };
 
 export default function App() {
