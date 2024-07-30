@@ -15,8 +15,8 @@ export const ACTIONS = {
 export default function App() {
   const [state, dispatch] = useReducer(reducer, {
     previous: "",
-    current: "",
     operation: "",
+    current: "",
     display: "",
   });
 

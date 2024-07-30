@@ -14,69 +14,61 @@ export default function reducer(state, action) {
           return {
             ...state,
             previous: state.current,
-            current: "",
             operation: "/",
+            current: "",
           };
         case "×":
           return {
             ...state,
             previous: state.current,
-            current: "",
             operation: "*",
+            current: "",
           };
         default:
           return {
             ...state,
             previous: state.current,
-            current: "",
             operation: action.payload.operation,
+            current: "",
           };
       }
     case ACTIONS.ENTER:
       switch (state.operation) {
         case "+":
           return {
-            previous: (
-              parseFloat(state.previous) + parseFloat(state.current)
-            ).toString(),
+            previous: "",
+            operation: "",
+            current: "",
             display: (
               parseFloat(state.previous) + parseFloat(state.current)
             ).toString(),
-            current: "",
-            operation: "",
           };
         case "-":
           return {
-            previous: (
-              parseFloat(state.previous) - parseFloat(state.current)
-            ).toString(),
+            previous: "",
+            operation: "",
+            current: "",
             display: (
               parseFloat(state.previous) - parseFloat(state.current)
             ).toString(),
-            current: "",
-            operation: "",
           };
         case "/":
           return {
-            previous: (
-              parseFloat(state.previous) / parseFloat(state.current)
-            ).toString(),
+            previous: "",
+            operation: "",
+            current: "",
             display: (
               parseFloat(state.previous) / parseFloat(state.current)
             ).toString(),
-            current: "",
-            operation: "",
           };
         case "*":
           return {
-            previous: (
-              parseFloat(state.previous) * parseFloat(state.current)
-            ).toString(),
+            previous: "",
+            operation: "",
+            current: "",
             display: (
               parseFloat(state.previous) * parseFloat(state.current)
             ).toString(),
-            current: "",
-            operation: "",
           };
         default:
           return { state };
