@@ -6,8 +6,8 @@ import { useReducer } from "react";
 import reducer from "./reducer";
 
 export const ACTIONS = {
-  ENTER_DIGIT: "ENTER_DIGIT",
-  ENTER_OPERATION: "OPERATION",
+  DIGIT: "ENTER_DIGIT",
+  OPERATION: "OPERATION",
   ENTER: "ENTER",
   CLEAR: "CLEAR",
 };

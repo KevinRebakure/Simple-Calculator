@@ -4,10 +4,10 @@ export default function Button({ operation, label, dispatch }) {
   const operations = ["+", "-", "×", "÷"];
   function handleClick() {
     if (digits.includes(label)) {
-      dispatch({ type: ACTIONS.ENTER_DIGIT, payload: { digit: label } });
+      dispatch({ type: ACTIONS.DIGIT, payload: { digit: label } });
     } else if (operations.includes(label)) {
       dispatch({
-        type: ACTIONS.ENTER_OPERATION,
+        type: ACTIONS.OPERATION,
         payload: { operation: label },
       });
     } else if (label === "=") {

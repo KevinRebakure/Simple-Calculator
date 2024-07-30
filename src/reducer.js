@@ -2,13 +2,13 @@ import { ACTIONS } from "./App";
 
 export default function reducer(state, action) {
   switch (action.type) {
-    case ACTIONS.ENTER_DIGIT:
+    case ACTIONS.DIGIT:
       return {
         ...state,
         current: state.current + action.payload.digit,
         display: state.current + action.payload.digit,
       };
-    case ACTIONS.ENTER_OPERATION:
+    case ACTIONS.OPERATION:
       switch (action.payload.operation) {
         case "÷":
           return {
