@@ -12,6 +12,8 @@ export default function Button({ operation, label, dispatch }) {
       });
     } else if (label === "=") {
       dispatch({ type: ACTIONS.ENTER, payload: { operation: operation } });
+    } else if (label === "AC") {
+      dispatch({ type: ACTIONS.CLEAR });
     }
   }
 

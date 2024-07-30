@@ -14,19 +14,25 @@ export const ACTIONS = {
 
 export default function App() {
   const [state, dispatch] = useReducer(reducer, {
-    previous: '',
-    current: '',
-    operation: ''
+    previous: "",
+    current: "",
+    operation: "",
+    display: "",
   });
 
-  console.log(state)
+  console.log(state);
 
   return (
     <div className="mx-auto w-max">
-      <Display />
+      <Display display={state.display} />
       <div className="grid grid-cols-4 border-r border-t border-gray-400">
         {labels.map((label) => (
-          <Button key={uuidv4()} operation={state.operation} label={label} dispatch={dispatch} />
+          <Button
+            key={uuidv4()}
+            operation={state.operation}
+            label={label}
+            dispatch={dispatch}
+          />
         ))}
       </div>
     </div>
