@@ -1,3 +1,5 @@
 export default function Display() {
-    return <p className="text-white text-end bg-[#7a7b88] py-2 px-3 text-5xl">0</p>;
+  return (
+    <p className="bg-[#7a7b88] px-3 py-2 text-end text-5xl text-white">0</p>
+  );
 }
