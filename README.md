@@ -10,3 +10,5 @@ The way it works is:
 6. Re-start it again
 
 The execution has to be in that exact order
+
+To make a long expression, hit = before adding anything else
