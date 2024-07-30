@@ -30,6 +30,7 @@ export default function App() {
         {labels.map((label) => (
           <Button
             key={uuidv4()}
+            state={state}
             operation={state.operation}
             label={label}
             dispatch={dispatch}
