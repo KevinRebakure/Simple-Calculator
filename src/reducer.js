@@ -11,9 +11,19 @@ export default function reducer(state, action) {
     case ACTIONS.ENTER_OPERATION:
       switch (action.payload.operation) {
         case "÷":
-          return { previous: state.current, current: "", operation: "/" };
+          return {
+            ...state,
+            previous: state.current,
+            current: "",
+            operation: "/",
+          };
         case "×":
-          return { previous: state.current, current: "", operation: "*" };
+          return {
+            ...state,
+            previous: state.current,
+            current: "",
+            operation: "*",
+          };
         default:
           return {
             ...state,
