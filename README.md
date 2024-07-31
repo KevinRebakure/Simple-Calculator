@@ -6,9 +6,7 @@ The way it works is:
 2. Enter operation
 3. Enter number b
 4. Hit = for an answer
-5. Delete everything with AC
-6. Re-start it again
+5. You can also type in another operation and the previous expression will be evaluated.
+6. Then continue
 
-The execution has to be in that exact order
-
-To make a long expression, hit = before adding anything else
+After pressing = sign, you can also continue from there and add another operation to continue from. You don't need to clear.
