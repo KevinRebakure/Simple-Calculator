@@ -65,29 +65,12 @@ export default function reducer(state, action) {
             return { state };
         }
       }
-      switch (action.payload.operation) {
-        case "÷":
-          return {
-            ...state,
-            previous: state.previous || state.current,
-            operation: "/",
-            current: "",
-          };
-        case "×":
-          return {
-            ...state,
-            previous: state.previous || state.current,
-            operation: "*",
-            current: "",
-          };
-        default:
-          return {
-            ...state,
-            previous: state.previous || state.current,
-            operation: action.payload.operation,
-            current: "",
-          };
-      }
+      return {
+        ...state,
+        previous: state.previous || state.current,
+        operation: action.payload.operation,
+        current: "",
+      };
     case ACTIONS.ENTER:
       switch (state.operation) {
         case "+":
