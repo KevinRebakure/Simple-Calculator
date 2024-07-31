@@ -1,4 +1,4 @@
-# Simple-Calculator (limited version)
+# Simple-Calculator
 
 The way it works is:
 
