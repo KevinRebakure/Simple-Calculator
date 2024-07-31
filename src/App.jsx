@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "uuid";
 import Display from "./Components/Display";
 import labels from "./labels";
 import Button from "./Components/Button";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import reducer from "./reducer";
 
 export const ACTIONS = {
@@ -14,12 +14,19 @@ export const ACTIONS = {
 };
 
 export default function App() {
-  const [state, dispatch] = useReducer(reducer, {
-    previous: "",
-    operation: "",
-    current: "",
-    display: "",
-  });
+  const [state, dispatch] = useReducer(
+    reducer,
+    JSON.parse(localStorage.getItem("calculator")) || {
+      previous: "",
+      operation: "",
+      current: "",
+      display: "",
+    },
+  );
+
+  useEffect(() => {
+    localStorage.setItem("calculator", JSON.stringify(state));
+  }, [state]);
 
   console.log(state);
 
