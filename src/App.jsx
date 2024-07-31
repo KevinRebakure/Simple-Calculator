@@ -31,7 +31,7 @@ export default function App() {
   console.log(state);
 
   return (
-    <div className="mx-auto w-max">
+    <div className="mx-auto w-[400px]">
       <Display display={state.display} />
       <div className="grid grid-cols-4 border-r border-t border-gray-400">
         {labels.map((label) => (
