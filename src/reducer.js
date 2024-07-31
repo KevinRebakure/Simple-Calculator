@@ -15,6 +15,56 @@ export default function reducer(state, action) {
         display: (parseInt(state.current) * -1).toString(),
       };
     case ACTIONS.OPERATION:
+      if (state.operation) {
+        switch (state.operation) {
+          case "+":
+            return {
+              previous: (
+                parseFloat(state.previous) + parseFloat(state.current)
+              ).toString(),
+              operation: action.payload.operation,
+              current: "",
+              display: (
+                parseFloat(state.previous) + parseFloat(state.current)
+              ).toString(),
+            };
+          case "-":
+            return {
+              previous: (
+                parseFloat(state.previous) - parseFloat(state.current)
+              ).toString(),
+              operation: action.payload.operation,
+              current: "",
+              display: (
+                parseFloat(state.previous) - parseFloat(state.current)
+              ).toString(),
+            };
+          case "/":
+            return {
+              previous: (
+                parseFloat(state.previous) / parseFloat(state.current)
+              ).toString(),
+              operation: action.payload.operation,
+              current: "",
+              display: (
+                parseFloat(state.previous) / parseFloat(state.current)
+              ).toString(),
+            };
+          case "*":
+            return {
+              previous: (
+                parseFloat(state.previous) * parseFloat(state.current)
+              ).toString(),
+              operation: action.payload.operation,
+              current: "",
+              display: (
+                parseFloat(state.previous) * parseFloat(state.current)
+              ).toString(),
+            };
+          default:
+            return { state };
+        }
+      }
       switch (action.payload.operation) {
         case "÷":
           return {
