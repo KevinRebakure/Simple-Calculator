@@ -5,6 +5,9 @@ export default function Button({ state, operation, label, dispatch }) {
   function handleClick() {
     if (digits.includes(label)) {
       if (label !== ".") {
+        // if (label === "0" && state.current === "0") {
+        //   return;
+        // }
         dispatch({ type: ACTIONS.DIGIT, payload: { digit: label } });
       } else {
         if (!state.current.includes(".")) {
