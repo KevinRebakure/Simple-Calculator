@@ -4,13 +4,31 @@ export default function Button({ state, operation, label, dispatch }) {
   const operations = ["+", "-", "×", "÷"];
   function handleClick() {
     if (digits.includes(label)) {
-      dispatch({ type: ACTIONS.DIGIT, payload: { digit: label } });
+      if (label !== ".") {
+        dispatch({ type: ACTIONS.DIGIT, payload: { digit: label } });
+      } else {
+        if (!state.current.includes(".")) {
+          dispatch({ type: ACTIONS.DIGIT, payload: { digit: label } });
+        }
+      }
     } else if (operations.includes(label)) {
       if (state.display !== "") {
-        dispatch({
-          type: ACTIONS.OPERATION,
-          payload: { operation: label },
-        });
+        if (["+", "-"].includes(label)) {
+          dispatch({
+            type: ACTIONS.OPERATION,
+            payload: { operation: label },
+          });
+        } else if (label === "×") {
+          dispatch({
+            type: ACTIONS.OPERATION,
+            payload: { operation: "*" },
+          });
+        } else if (label === "÷") {
+          dispatch({
+            type: ACTIONS.OPERATION,
+            payload: { operation: "/" },
+          });
+        }
       }
     } else if (label === "=") {
       if (state.display !== "") {
